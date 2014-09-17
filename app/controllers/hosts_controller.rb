@@ -1,9 +1,11 @@
+require 'json'
 class HostsController < ApplicationController
   def index
   end
 
   def create
-    puts add_host(params[:host], cookies[:auth_token], to_boolean(cookies[:use_cert]), cookies[:base_url], cookies[:tenant_uid])
+    puts params[:host].to_json
+    puts add_host(params[:host].to_json, cookies[:auth_token], to_boolean(cookies[:use_cert]), cookies[:base_url], cookies[:tenant_uid])
   end
 
   def new

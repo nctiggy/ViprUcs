@@ -1,10 +1,11 @@
 <%= form_tag({action: "create"}, {method: "post"}) do %>
-	<% hidden_field :host, :type, :value => 'other' %>
 	<table border="0" cellspacing="5" cellpadding="5">
+		<tr><td><%= label_tag(:discoverable, "discoverable:")%> </td><td><%= text_field :host, :discoverable %></td></tr>
+		<tr><td><%= label_tag(:type, "type:")%> </td><td><%= text_field :host, :type %></td></tr>
 		<tr><td><%= label_tag(:name, "Host Name:")%> </td><td><%= text_field :host, :name %></td></tr>
 		<tr><td><%= label_tag(:host_name, "FQDN:")%> </td><td><%= text_field :host, :host_name %></td></tr>
 		<tr><td><%= label_tag(:wwnn, "WWNN")%> </td><td><%= text_field :initiators, :wwnn %></td></tr>
-		<tr><td><%= label_tag(:wwpn, "WWPN's separate with comma") %> </td><td><%= password_field :initiators, :wwpn %></td></tr>
+		<tr><td><%= label_tag(:wwpn, "WWPN's separate with comma") %> </td><td><%= text_field :initiators, :wwpn %></td></tr>
 		<tr><td></td><td><%= submit_tag("Submit", {:disable_with => 'Submiting...'}) %>
 	</table>
 <% end %>
