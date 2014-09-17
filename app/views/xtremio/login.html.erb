@@ -1,0 +1,7 @@
+<%= form_tag({action: "generate_token"}, {method: "post"}) do %>
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr><td><%= label_tag(:user_name, "User Name:")%> </td><td><%= text_field(:login, :user_name) %></td></tr>
+		<tr><td><%= label_tag(:password, "Password:") %> </td><td><%= password_field(:login, :password) %></td></tr>
+		<tr><td></td><td><%= submit_tag("Submit", {:disable_with => 'Submiting...'}) %>
+	</table>
+<% end %>

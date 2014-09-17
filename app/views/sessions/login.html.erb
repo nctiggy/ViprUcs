@@ -1,0 +1,9 @@
+<%= form_tag({action: "login_attempt"}, {method: "post"}) do %>
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr><td><%= label_tag(:server_name, "Server Name/IP:")%> </td><td><%= text_field :login, :server_name, value: cookies[:server_name] || '' %></td></tr>
+		<tr><td><%= label_tag(:user_name, "User Name:")%> </td><td><%= text_field :login, :user_name, value: cookies[:user_name] || ''%></td></tr>
+		<tr><td><%= label_tag(:password, "Password:") %> </td><td><%= password_field :login, :password %></td></tr>
+		<tr><td><%= label_tag(:use_cert?, "Use Certificate?") %> </td><td><%= check_box :login, :use_cert %></td></tr>
+		<tr><td></td><td><%= submit_tag("Submit", {:disable_with => 'Submiting...'}) %>
+	</table>
+<% end %>
